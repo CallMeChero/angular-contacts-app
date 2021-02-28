@@ -2,17 +2,11 @@ import { Routes } from '@angular/router';
 
 export const content: Routes = [
   {
-    path: 'dashboard',
-    loadChildren: () => import('../../components/dashboard/dashboard.module').then(m => m.DashboardModule),
-    data: {
-      breadcrumb: "Dashboard"
-    }
+    path: 'contacts',
+    loadChildren: () => import('src/app/components/contacts/contacts.module').then(m => m.ContactsModule)
   },
   {
-    path: 'base',
-    loadChildren: () => import('../../components/base/base.module').then(m => m.BaseModule),
-    data: {
-      breadcrumb: "Base"
-    }
-  }
+    path: 'favorites',
+    loadChildren: () => import('src/app/components/contacts/contacts.module').then(m => m.ContactsModule)
+  },
 ];

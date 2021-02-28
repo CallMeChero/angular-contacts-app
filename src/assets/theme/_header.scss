@@ -1,0 +1,15 @@
+@import "variables";
+
+.linear-header {
+  background: $gradient-primary;
+  border-bottom: 0.5rem solid $light-skyblue;
+  display: flex;
+  justify-content: center;
+}
+
+.header-title {
+  text-transform: uppercase;
+  font-family: $font-audiowide;
+  letter-spacing: .250em;
+  color: $light;
+}

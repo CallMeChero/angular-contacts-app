@@ -1,0 +1,44 @@
+// Fonts
+@import '../fonts/fonts';
+
+// General variables
+$theme-font-color: #1b252a;
+$theme-body-font-color: #313131;
+$theme-body-sub-title-color: #777777;
+
+// Theme colors variables
+$primary-color: #35a0ab;
+$secondary-color: #78c9ce ;
+$success-color: #22af47 ;
+$info-color   : #007bff  ;
+$warning-color: #ff9f40;
+$danger-color: #ff5370 ;
+$light-color   : #f6f7fb ;
+$semi-dark  :#aaaaaa;
+$light-semi-gray   :#eff0f1;
+$light-gray   :#e8ebf2;
+$dark-gray 	:#898989;
+$dark-color   : #2a3142;
+$gray-60   :#999999 ;
+$transparent-color: transparent;
+$light : #f6f6f6;
+$light-text: #999;
+$light-skyblue: #94d1d6;
+$dark-primary: #448aff;
+$pitch-color: #fe8a7d;
+$flower-pink: #fb6d9d;
+$dark-sky: #536dfe;
+$color-scarpa: #4c5667;
+$color-fiord: #455a64;
+
+$black : #000;
+$white:#fff;
+$btn-bhome-bg-c:#ff6060;
+$btn-search-bg-c:#ffd042;
+
+// gradient colors
+$gradient-primary: -webkit-linear-gradient(0deg,$primary-color, $secondary-color);
+
+//fonts
+$font-audiowide: 'Audiowide';
+$font-open-sans: 'Open Sans';

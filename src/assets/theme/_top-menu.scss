@@ -1,0 +1,25 @@
+@import 'variables';
+
+.top-menu-container {
+  border-bottom: .15rem solid $primary-color;
+  .menu-list {
+    padding:0;
+    display: flex;
+    justify-content: center;
+    li {
+      list-style-type: none;
+      padding: 0 2rem;
+      margin: 2rem 0;
+      &:nth-child(odd) {
+        border-right: .15rem  solid $primary-color;
+      }
+      .menu-item {
+        font-family: $font-open-sans;
+        &:active {
+          color: $primary-color;
+        }
+
+      }
+    }
+  }
+}

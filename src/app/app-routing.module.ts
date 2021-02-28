@@ -1,15 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
+import { LayoutComponent } from './shared/layout/layout.component';
+import { content } from './shared/routes/content-routes';
 
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'contacts',
-    pathMatch: 'full'
+    component: LayoutComponent,
+    children: content
   },
   {
     path: '**',
-    redirectTo: ''
+    redirectTo: 'contacts'
   }
 ];
 
