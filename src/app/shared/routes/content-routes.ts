@@ -7,6 +7,6 @@ export const content: Routes = [
   },
   {
     path: 'favorites',
-    loadChildren: () => import('src/app/components/contacts/contacts.module').then(m => m.ContactsModule)
+    loadChildren: () => import('src/app/components/favorites/favorites.module').then(m => m.FavoritesModule)
   },
 ];

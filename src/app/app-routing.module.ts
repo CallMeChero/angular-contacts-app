@@ -13,6 +13,7 @@ const routes: Routes = [
     path: '**',
     redirectTo: 'contacts'
   }
+  // nisu tražene error stranice... niti je spomenut error handling stoga ovo nije booletproof
 ];
 
 @NgModule({

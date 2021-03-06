@@ -1,7 +1,7 @@
 <div class="top-menu-container m-b-50">
   <ul class="menu-list">
     <li *ngFor="let item of menuItems">
-      <a class="menu-item f-18" [routerLink]="[item.name]" routerLinkActive="active">
+      <a class="menu-item f-18" [routerLink]="[item.path]" routerLinkActive="is-active">
         {{ item.name }}
       </a>
     </li>

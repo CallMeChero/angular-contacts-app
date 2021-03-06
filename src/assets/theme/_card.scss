@@ -1,6 +1,81 @@
 @import 'variables';
 
 .card {
-  border: 1px solid black;
-  flex: 1
+  border: 1px solid $primary-color;
+  margin-bottom: 20px;
+
+  .card-text {
+    font-size: 14px;
+    color: $primary-color;
+  }
+
+  &.creation {
+    border: 1px dashed $primary-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    i {
+      color: $primary-color;
+    }
+  }
+
+  .card-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.3rem 0.6rem 0 !important;
+    margin-bottom: 0;
+    background-color: $white;
+    border-bottom: none !important;
+
+    i {
+      color: $dark-gray;
+    }
+  }
+
+  .card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .contact-img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    .card-credentials {
+      font-size: 16px;
+      color: $dark-gray;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+
+@media (min-width: 768px) {
+  .card {
+   width: 100%;
+   height: 100px;
+  }
+ }
+
+@media (min-width: 992px) {
+ .card {
+  width: 200px;
+  height: 150px;
+  &:not(:nth-child(4n)){
+    margin-right: 22.5px;
+  }
+ }
+}
+@media (min-width: 1200px) {
+  .card {
+    width: 250px;
+    height: 150px;
+    &:not(:nth-child(4n)){
+      margin-right: 22.5px;
+    }
+  }
 }

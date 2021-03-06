@@ -14,11 +14,12 @@
         border-right: .15rem  solid $primary-color;
       }
       .menu-item {
+        text-decoration: none;
         font-family: $font-open-sans;
-        &:active {
+        color: $light-text;
+        &.is-active {
           color: $primary-color;
         }
-
       }
     }
   }

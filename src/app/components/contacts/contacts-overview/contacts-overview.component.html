@@ -1,5 +1,21 @@
-<div class="card-container">
-  <div class="card">
-    dsadasdasds
+<div class="row px-3">
+  <div class="card creation">
+    <i class="fa fa-plus fa-2x"></i>
+    <span class="card-text">Add new</span>
+  </div>
+  <div class="card" *ngFor="let contact of contacts$ | async;">
+    <div class="card-header">
+      <span class="card-prepend">
+        <i class="fa fa-heart"></i>
+      </span>
+      <span class="card-append">
+        <i class="fa fa-pencil"></i>
+        <i class="fa fa-trash ml-3"></i>
+      </span>
+    </div>
+    <div class="card-body">
+      <img class="contact-img" alt="cartman" [src]="contact.imgSrc">
+      <span class="card-credentials">{{ contact.fullName }}</span>
+    </div>
   </div>
 </div>
