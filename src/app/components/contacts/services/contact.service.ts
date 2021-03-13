@@ -23,7 +23,7 @@ export class ContactService {
 
   add(contact: IContactResponse): void {
     let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
-    contacts = [...contacts, { ...contact, id: Math.floor(Math.random() * (999)) }];
+    contacts = [...contacts, { ...contact, id: Math.floor(Math.random() * (999)), isFavorite: false }];
     localStorage.setItem('contacts', JSON.stringify(contacts));
   }
 
