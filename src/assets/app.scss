@@ -10,6 +10,7 @@
 @import "theme/button";
 @import "theme/modal";
 @import "theme/contact-detail";
+@import "theme/search";
 
 html {
   position: absolute;
@@ -28,10 +29,9 @@ html {
   cursor: default;
 
   body {
-    position: fixed;
     width: 100%;
     height: 100%;
-    overflow-y: auto;
+    overflow-y: auto !important;
     margin: 0;
   }
 }

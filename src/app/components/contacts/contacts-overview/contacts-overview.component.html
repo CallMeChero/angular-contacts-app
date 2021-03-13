@@ -1,9 +1,15 @@
+<div class="col-lg-6 col-sm-12 custom-offset input-group search-box">
+  <div class="input-group-prepend">
+    <span class="input-group-text"><i class="fa fa-search"></i></span>
+  </div>
+  <input type="text" class="form-control removed-left-border" #search>
+</div>
 <div class="row px-3">
-  <div class="card creation" (click)="navigateToDetail(true)" *ngIf="!isFavorites">
+  <div class=" card creation" (click)="navigateToDetail(true)" *ngIf="!isFavorites">
     <i class="fa fa-plus fa-2x"></i>
     <span class="card-text">Add new</span>
   </div>
-  <div class="card" *ngFor="let contact of contacts$ | async;">
+  <div class="card" *ngFor="let contact of( contacts$ | async) || null; trackBy: trackByFn">
     <div class="card-header">
       <span class="card-prepend">
         <i class="fa fa-heart" [ngClass]="{'text-danger': contact.isFavorite}"></i>

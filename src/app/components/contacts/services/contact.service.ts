@@ -44,11 +44,12 @@ export class ContactService {
     );
   }
 
-  deleteEntry(id: number): void {
+  deleteEntry(id: number): Observable<IContactResponse[]> {
     // ovo bi mogao biti one-liner ali bi bilo nečitljivo
     let contacts = JSON.parse(localStorage.getItem('contacts'));
     contacts = contacts.filter(contact => contact.id !== id);
     localStorage.setItem("contacts", JSON.stringify(contacts));
+    return of(contacts)
   }
 
   private handleError(err: any): Observable<never> {

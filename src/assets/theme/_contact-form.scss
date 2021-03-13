@@ -98,7 +98,34 @@
         top: 290px;
         width: 100%;
         padding: 0 30px;
+        .input-group {
+          .form-number {
+            width:100%;
+            margin-bottom: 10px;
+          }
+          .form-relation {
+            left:0;
+            width: 80%;
+            padding-left: 0;
+            margin-bottom: 20px;
+          }
+          .form-x-mark {
+            width:20%;
+            margin: 0;
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 20px;
+          }
+        }
       }
+    }
+  }
+  .form-footer {
+    display: flex;
+    justify-content: space-between;
+    .col-sm-12 {
+      flex: 0 0 100%;
+      max-width: 45%
     }
   }
 }

@@ -54,21 +54,21 @@
             <div *ngFor="let phone of phones.controls; index as i">
               <ng-container [formGroupName]="i">
                 <div class="input-group mb-2">
-                  <div class="col-lg-5 p-0">
+                  <div class="col-lg-5 p-0 form-number">
                     <input formControlName="number" class="form-control" type="text" placeholder="Number"
                       [ngClass]="{'is-invalid': number(i).invalid && (number(i).dirty || number(i).touched || ngContractDetailForm.submitted)}" />
                     <div class="invalid-feedback">
                       Number is required
                     </div>
                   </div>
-                  <div class="col-lg-5 pr-0">
+                  <div class="col-lg-5 pr-0 form-relation">
                     <input formControlName="name" class="form-control" type="text" placeholder="Relation"
                       [ngClass]="{'is-invalid': name(i).invalid && (name(i).dirty || name(i).touched || ngContractDetailForm.submitted)}" />
                     <div class="invalid-feedback">
                       Relation is required
                     </div>
                   </div>
-                  <div class="offset-1 col-lg-1 p-0 d-flex justify-content-end align-items-center">
+                  <div class="offset-1 col-lg-1 p-0 d-flex justify-content-end align-items-center form-x-mark">
                     <span>
                       <button class="btn custom-runded" type="button" (click)="removeNumber(i)">
                         <i class="fa fa-times fa-xs"></i>

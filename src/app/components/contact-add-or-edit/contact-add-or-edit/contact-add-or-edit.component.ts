@@ -35,7 +35,7 @@ export class ContactAddOrEditComponent implements OnInit {
       if (parameter?.id) {
         this.id = +parameter.id;
         this._contactService.getById(this.id).subscribe(
-          response => { this.contact = { ...response }; console.log(this.contact) }
+          response => this.contact = { ...response }
         )
       }
 
@@ -49,7 +49,6 @@ export class ContactAddOrEditComponent implements OnInit {
   }
 
   setUpFormGroup(): void {
-    console.log(this.id)
     if (this.id) {
       this.contractDetailGroup = this._formBuilder.group({
         id: this.id,

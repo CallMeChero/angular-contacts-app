@@ -32,7 +32,7 @@ export class ContactDetailComponent {
     this._activatedRoute.params.subscribe(parameter => {
       this.id = +parameter.id;
       this._contactService.getById(this.id).subscribe(
-        response => { this.contact = { ...response }; console.log(this.contact) }
+        response => this.contact = { ...response }
       )
     })
   }
