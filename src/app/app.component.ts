@@ -25,7 +25,7 @@ export class AppComponent {
           if (window) window.scrollTo(0, 0);
         }
         this.componentBeforeNavigation = currentRoute.component;
-        setTimeout(() => { this.ngxSpinner.hide() }, 500)
+        setTimeout(() => { this.ngxSpinner.hide() }, 1000)
       }
     });
   }

@@ -1,0 +1,40 @@
+<div class="d-flex">
+  <div class="">
+    <img class="detail-image" alt="cartman" [src]="contact.imgSrc" (error)="onImgError($event)">
+  </div>
+  <div class="user-form">
+    <div class="header">
+      <div class="header-left">
+        <i class="fa fa-arrow-left" (click)="navigateBack()"></i>
+        <h4>{{ contact.fullName }}</h4>
+      </div>
+      <div class="header-right">
+        <i class="fa fa-heart" (click)="setAsFavourite()" [ngClass]="{'text-danger': contact.isFavorite}"></i>
+        <i class="fa fa-pencil" (click)="navigateToDetail()"></i>
+      </div>
+    </div>
+    <div class="detail-body">
+      <div class="detail-row">
+        <label for="email">
+          <i class="fa fa-envelope"></i> Email
+        </label>
+        <span class="detail-row-entry">{{ contact.email }}</span>
+      </div>
+      <div class="detail-row">
+        <label for="phone">
+          <i class="fa fa-phone"></i> Numbers
+        </label>
+        <div class="detail-phone-entry">
+          <div class="d-flex" *ngFor="let phone of contact.phones">
+            <span class="phone-name">
+              {{ phone.name }}
+            </span>
+            <span class="phone-number">
+              {{ phone.number }}
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

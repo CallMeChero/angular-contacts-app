@@ -1,5 +1,8 @@
 <app-header></app-header>
-<div class="container">
-  <app-top-menu></app-top-menu>
+<div class="page-container">
+  <app-top-menu *ngIf="displayNavigation; else noNavigation"></app-top-menu>
+  <ng-template #noNavigation>
+    <div class="mt-5"></div>
+  </ng-template>
   <router-outlet></router-outlet>
 </div>

@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutModule } from './layout/layout.module';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { ConfirmationModule } from './confirmation/confirmation.module';
 
 @NgModule({
   declarations: [
@@ -9,9 +10,13 @@ import { NgxSpinnerModule } from "ngx-spinner";
   imports: [
     CommonModule,
     LayoutModule,
-    NgxSpinnerModule
+    NgxSpinnerModule,
+    ConfirmationModule
   ],
-  exports: [NgxSpinnerModule]
+  exports: [
+    NgxSpinnerModule,
+    ConfirmationModule
+  ]
 })
 export class SharedModule { }
 

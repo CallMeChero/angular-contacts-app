@@ -6,12 +6,15 @@
 @import "theme/container";
 @import "theme/top-menu";
 @import "theme/card";
+@import "theme/contact-form";
+@import "theme/button";
+@import "theme/modal";
+@import "theme/contact-detail";
 
 html {
   position: absolute;
   width: 100%;
   height: 100%;
-  overflow: hidden;
   background-color: #fefefe;
   text-align: center;
   -webkit-touch-callout: none;
@@ -28,7 +31,7 @@ html {
     position: fixed;
     width: 100%;
     height: 100%;
-    overflow: hidden;
+    overflow-y: auto;
     margin: 0;
   }
 }

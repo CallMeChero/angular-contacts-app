@@ -1,20 +1,20 @@
 <div class="row px-3">
-  <div class="card creation">
+  <div class="card creation" (click)="navigateToDetail(true)" *ngIf="!isFavorites">
     <i class="fa fa-plus fa-2x"></i>
     <span class="card-text">Add new</span>
   </div>
   <div class="card" *ngFor="let contact of contacts$ | async;">
     <div class="card-header">
       <span class="card-prepend">
-        <i class="fa fa-heart"></i>
+        <i class="fa fa-heart" [ngClass]="{'text-danger': contact.isFavorite}"></i>
       </span>
       <span class="card-append">
-        <i class="fa fa-pencil"></i>
-        <i class="fa fa-trash ml-3"></i>
+        <i class="fa fa-pencil" (click)="navigateToDetail(true, contact.id)"></i>
+        <i class="fa fa-trash ml-3" (click)="deleteEntry(contact.id)"></i>
       </span>
     </div>
-    <div class="card-body">
-      <img class="contact-img" alt="cartman" [src]="contact.imgSrc">
+    <div class="card-body" (click)="navigateToDetail(false, contact.id)">
+      <img class="contact-img" alt="cartman" [src]="contact.imgSrc" (error)="onImgError($event)">
       <span class="card-credentials">{{ contact.fullName }}</span>
     </div>
   </div>

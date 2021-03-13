@@ -1,0 +1,38 @@
+@import 'variables';
+
+.modal-header {
+  background-color: $white;
+  border-bottom: 0 !important;
+  .modal-title {
+    color: $gray-60;
+    font-size: 1.2rem !important;
+  }
+}
+
+.modal-body {
+  display: flex;
+  justify-content: center;
+}
+
+.modal-footer {
+  display: flex !important;
+  justify-content: space-between !important;
+  border-top: 0 !important;
+
+  .modal-button {
+    padding: .4rem 3rem;
+  }
+}
+
+@media only screen and (min-width: 200px) and (max-width: 767px) {
+  .modal-body {
+    text-align: center;
+  }
+  .modal-footer {
+    display: flex;
+    flex-direction: column-reverse;
+    .modal-button {
+      padding: .4rem 3rem;
+    }
+  }
+}

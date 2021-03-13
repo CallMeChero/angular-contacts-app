@@ -18,6 +18,10 @@
     i {
       color: $primary-color;
     }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .card-header {
@@ -27,9 +31,11 @@
     margin-bottom: 0;
     background-color: $white;
     border-bottom: none !important;
+    font-size: 20px;
 
     i {
       color: $dark-gray;
+      cursor: pointer;
     }
   }
 
@@ -38,11 +44,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
 
     .contact-img {
       width: 60px;
       height: 60px;
       border-radius: 50%;
+      border: 1px solid #ddd;
+      padding: 2px;
     }
 
     .card-credentials {
@@ -53,29 +62,149 @@
   }
 }
 
-
-@media (min-width: 768px) {
+@media only screen and (min-width: 1201px)  {
   .card {
-   width: 100%;
-   height: 100px;
-  }
- }
-
-@media (min-width: 992px) {
- .card {
-  width: 200px;
-  height: 150px;
-  &:not(:nth-child(4n)){
-    margin-right: 22.5px;
-  }
- }
-}
-@media (min-width: 1200px) {
-  .card {
-    width: 250px;
-    height: 150px;
+    width: 275.1406px;
+    height: 175px;
     &:not(:nth-child(4n)){
       margin-right: 22.5px;
+    }
+  }
+}
+
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+  .card {
+    width: 200.1406px;
+    height: 175px;
+    &:not(:nth-child(4n)){
+      margin-right: 22.5px;
+    }
+  }
+}
+
+@media only screen and (min-width: 767px) and (max-width: 992px) {
+  .card {
+    width: 162.64px;
+    height: 175px;
+    &:not(:nth-child(4n)){
+      margin-right: 22.5px;
+    }
+   }
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+  .card {
+    width: 100%;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+
+    &.creation {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      i {
+        margin: 0 27.5px;
+      }
+    }
+    .card-header {
+      position: absolute;
+      right:0;
+      top: 22px;
+      align-items: center;
+      width: 150px;
+      .card-prepend {
+        width: 50px;
+      }
+      .card-append {
+        width: 100px;
+        display: flex;
+        justify-content: space-around;
+      }
+      i {
+        font-size: 20px
+      }
+    }
+
+    .card-body {
+      width: 300px;
+      position: absolute;
+      left:15px;
+      top: 7px;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      .contact-img {
+        margin-right: 3rem;
+      }
+      .card-credentials {
+        margin: 0
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 200px) and (max-width: 479px) {
+  .card {
+    width: 100%;
+    height: 75px;
+    display: flex;
+    flex-direction: row;
+
+    &.creation {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      i {
+        margin: 0 30px;
+      }
+    }
+    .card-header {
+      width: 150px;
+      position: absolute;
+      right:0;
+      top: 26px;
+      align-items: center;
+      display: flex;
+      padding: 0 0.5rem !important;
+      .card-prepend {
+        flex: 1;
+        width: 50px;
+      }
+      .card-append {
+        width: 100px;
+        flex: 2;
+        display: flex;
+        margin:0;
+        justify-content: space-around;
+      }
+      i {
+        font-size: 20px
+      }
+    }
+
+    .card-body {
+      position: absolute;
+      left:15px;
+      top: 11.5px;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      width: 200px;
+
+      .contact-img {
+        margin-right: 1rem;
+        width: 50px;
+        height: 50px;
+      }
+      .card-credentials {
+        margin: 0;
+      }
     }
   }
 }

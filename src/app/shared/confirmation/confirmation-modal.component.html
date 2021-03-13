@@ -1,0 +1,19 @@
+<div class="modal-header">
+  <h4 class="modal-title" id="modal-title">
+    {{ title }}
+  </h4>
+</div>
+<div class="modal-body">
+  <p>
+    {{ description }}
+  </p>
+</div>
+<div class="modal-footer">
+  <button type="button" ngbAutofocus class="btn btn-semi-dark rounded-pill modal-button"
+    (click)="modal.dismiss('cancel')">
+    <span>Cancel</span>
+  </button>
+  <button type="button" class="btn btn-primary rounded-pill modal-button" (click)="modal.close(true)">
+    <span>Delete</span>
+  </button>
+</div>

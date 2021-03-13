@@ -1,0 +1,105 @@
+@import 'variables';
+
+.form-image {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+
+  .image-placeholder {
+    width: 200px;
+    height: 200px;
+    background-color: $primary-color;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    span {
+      color: $white;
+      font-size: 24px;
+    }
+  }
+}
+
+.user-form {
+  flex: 5;
+
+  .form-header {
+    display: flex;
+    justify-content: space-between;
+    i {
+      font-size: 1.25rem;
+      color: $dark-gray;
+      margin: .8rem 0;
+      cursor: pointer;
+    }
+  }
+
+  form {
+
+    .form-group {
+      border-top: 2px solid $primary-color;
+      padding: 1.25rem 0;
+    }
+
+    label {
+      color: $primary-color;
+      i {
+        margin-right: .35rem;
+      }
+    }
+
+    .custom-runded {
+      font-size: .875rem;
+      width: 1rem;
+      height: 1.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: .5rem .8rem;
+      color: $primary-color;
+      border: 1px solid $primary-color;
+      border-radius: 50%;
+    }
+
+    button.new-entry {
+      padding: 0;
+      color: $primary-color;
+    }
+
+    .form-footer {
+      display: flex ;
+      justify-content: space-between;
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .form-image {
+    position: absolute;
+    left: calc(50% - 100px);
+    top: 120px;
+  }
+  .user-form {
+    form {
+      position: absolute;
+      top: 55px;
+      width: 100%;
+      left: 0;
+      .form-header {
+        padding: 10px;
+        border-bottom: 1px solid $semi-dark;
+        i {
+          margin: 0;
+        }
+      }
+      .form-body {
+        position: absolute;
+        top: 290px;
+        width: 100%;
+        padding: 0 30px;
+      }
+    }
+  }
+}
+

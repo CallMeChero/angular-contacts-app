@@ -24,3 +24,15 @@
     }
   }
 }
+
+@media only screen and (min-width: 200px) and (max-width: 767px) {
+  .top-menu-container {
+    .menu-list {
+      margin-bottom: 0;
+      li {
+        padding: 0 1rem;
+        margin: 1rem 0;
+      }
+    }
+  }
+}

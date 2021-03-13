@@ -1,33 +1,57 @@
 import { Injectable } from '@angular/core';
-import { NgxSpinnerService } from 'ngx-spinner';
 import { Observable, of, throwError } from 'rxjs';
-import { catchError, map, tap } from 'rxjs/operators';
+import { catchError, first, map, tap } from 'rxjs/operators';
 import { IContactResponse } from 'src/app/components/contacts/models/response/contact-response';
 
 @Injectable({
-  providedIn: 'any',
+  providedIn: 'root',
 })
 export class ContactService {
 
   /* #region  Variables */
-  loader: NgxSpinnerService;
   // declarative approach
   contacts$ = of<[IContactResponse[]]>([JSON.parse(localStorage.getItem('contacts'))]).pipe(
     map(res => res[0] as IContactResponse[]),
     tap(res => console.log("Get all contacts", res)),
-    catchError(error => this.handleError(error))
+    catchError(this.handleError)
   );
   /* #endregion */
 
   /* #region  Constructor */
-  constructor(
-    private _ngxSpinnerService: NgxSpinnerService
-  ) {
-    this.loader = this._ngxSpinnerService;
-  }
+  constructor() { }
   /* #endregion */
 
-  private handleError(err: any, loader?: NgxSpinnerService): Observable<never> {
+  add(contact: IContactResponse): void {
+    let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+    contacts = [...contacts, { ...contact, id: Math.floor(Math.random() * (999)) }];
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }
+
+  edit(contact: IContactResponse): void {
+    let contacts = JSON.parse(localStorage.getItem('contacts'));
+    const index = contacts.findIndex(el => el.id === contact.id);
+    contacts[index] = contact;
+    localStorage.setItem('contacts', JSON.stringify(contacts));
+  }
+
+  getById(id: number): Observable<IContactResponse> {
+    return this.contacts$.pipe(
+      first(),
+      map(response => {
+        return response.find(x => x.id === id)
+      }),
+      catchError(this.handleError)
+    );
+  }
+
+  deleteEntry(id: number): void {
+    // ovo bi mogao biti one-liner ali bi bilo nečitljivo
+    let contacts = JSON.parse(localStorage.getItem('contacts'));
+    contacts = contacts.filter(contact => contact.id !== id);
+    localStorage.setItem("contacts", JSON.stringify(contacts));
+  }
+
+  private handleError(err: any): Observable<never> {
     let errorMessage: string;
     if (err.error instanceof ErrorEvent) {
       // A client-side or network error occurred. Handle it accordingly.
@@ -36,7 +60,6 @@ export class ContactService {
       // The backend returned an unsuccessful response code.
       errorMessage = err.error.errorMessage;
     }
-    if (loader) loader.hide();
     return throwError(errorMessage);
   }
   /* #endregion */
