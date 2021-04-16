@@ -91,8 +91,6 @@ export class ContactsOverviewComponent implements OnInit, AfterViewInit {
     return item.id;
   }
 
-  // ovo bi realno trebala biti ili zasebna komponenta ili kobinacija pipe + direktive
-  // ako citate ovo, naredni put zadajte nekome task sa in memory web api, a ne local storage
   setUpFilter() {
     fromEvent(this.searchInput.nativeElement, 'input')
       .pipe(
